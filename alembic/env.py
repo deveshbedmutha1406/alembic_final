@@ -92,7 +92,7 @@ def run_migrations_online() -> None:
         context.configure(
             connection=connection, target_metadata=target_metadata,
             on_version_apply=update_history,
-            compare_type=True
+            include_object=include_object
         )
 
         with context.begin_transaction():
